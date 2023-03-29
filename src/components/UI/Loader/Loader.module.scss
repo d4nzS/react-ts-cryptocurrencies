@@ -1,0 +1,25 @@
+@use '../../../assets/sccs/mixins' as m;
+@use '../../../assets/sccs/functions' as f;
+
+.loader {
+  width: 2rem;
+  height: 2rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @include m.media(md) {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  @include m.media(xxl) {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  circle {
+    stroke: f.color(MAIN_ACCENT);
+  }
+}

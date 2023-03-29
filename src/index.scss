@@ -1,4 +1,5 @@
 @use 'assets/sccs/fonts';
+@use 'assets/sccs/functions' as f;
 
 * {
   box-sizing: border-box;
@@ -7,6 +8,7 @@
 }
 
 body {
+  color: f.color(MAIN_DARK);
   font-family: 'Montserrat', sans-serif;
   max-width: 69.375rem;
   margin: 0 auto;

@@ -1,0 +1,1 @@
+export const LOADER_ELEMENT = document.getElementById('loader-root') as HTMLElement;

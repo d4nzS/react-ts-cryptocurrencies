@@ -2,14 +2,16 @@ import { FC } from 'react';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 
 import AppUrlsConstants from './constants/urls';
-import RootLayout from './pages/RootLayout';
+import RootLayout, { rootLoader } from './pages/RootLayout';
 import MainPage from './pages/MainPage';
 import CryptocurrencyPage from './pages/CryptocurrencyPage';
 
 const router = createBrowserRouter([
   {
     path: '',
+    id: 'root',
     element: <RootLayout/>,
+    loader: rootLoader,
     children: [
       {
         index: true,

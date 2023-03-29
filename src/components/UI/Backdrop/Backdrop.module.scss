@@ -1,0 +1,12 @@
+@use '../../../assets/sccs/functions' as f;
+
+.backdrop {
+  background: f.color(MAIN_DARK);
+  opacity: 0.3;
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
