@@ -1,16 +1,20 @@
 import { FC } from 'react';
 import { defer, Outlet, ScrollRestoration, useLoaderData } from 'react-router-dom';
 
+import AsyncWrapper from '../components/Shared/AsyncWrapper';
 import Header from '../components/Header/Header';
+import Cryptocurrency from '../models/cryptocurrency';
 import CryptocurrencyService from '../services/cryptocurrency-service';
 
 const RootLayout: FC = () => {
-  const { cryptocurrencies } = useLoaderData() as { cryptocurrencies: Promise<void> };
+  const { mostExpensiveCryptocurrencies } = useLoaderData() as { mostExpensiveCryptocurrencies: Promise<Cryptocurrency[]> };
 
   return (
     <>
       <ScrollRestoration/>
-      <Header/>
+      <AsyncWrapper promise={mostExpensiveCryptocurrencies}>
+        {cryptocurrencies => <Header mostExpensiveCryptocurrencies={cryptocurrencies}/>}
+      </AsyncWrapper>
       <Outlet/>
     </>
   );
@@ -19,5 +23,5 @@ const RootLayout: FC = () => {
 export default RootLayout;
 
 export const rootLoader = () => {
-  return defer({ cryptocurrencies: CryptocurrencyService.getAll() });
+  return defer({ mostExpensiveCryptocurrencies: CryptocurrencyService.getMostExpensive() });
 }
