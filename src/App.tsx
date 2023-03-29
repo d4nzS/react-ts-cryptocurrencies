@@ -3,7 +3,7 @@ import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 
 import AppUrlsConstants from './constants/urls';
 import RootLayout, { rootLoader } from './pages/RootLayout';
-import MainPage from './pages/MainPage';
+import MainPage, { mainLoader } from './pages/MainPage';
 import CryptocurrencyPage from './pages/CryptocurrencyPage';
 
 const router = createBrowserRouter([
@@ -19,7 +19,8 @@ const router = createBrowserRouter([
       },
       {
         path: AppUrlsConstants.CRYPTOCURRENCIES,
-        element: <MainPage/>
+        element: <MainPage/>,
+        loader: mainLoader
       },
       {
         path: `${AppUrlsConstants.CRYPTOCURRENCIES}/:cryptocurrencyId`,

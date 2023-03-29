@@ -13,7 +13,7 @@ const RootLayout: FC = () => {
     <>
       <ScrollRestoration/>
       <AsyncWrapper promise={mostExpensiveCryptocurrencies}>
-        {cryptocurrencies => <Header mostExpensiveCryptocurrencies={cryptocurrencies}/>}
+        {loadedCryptocurrencies => <Header mostExpensiveCryptocurrencies={loadedCryptocurrencies}/>}
       </AsyncWrapper>
       <Outlet/>
     </>

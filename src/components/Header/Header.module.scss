@@ -4,15 +4,17 @@
 .header {
   background: f.color(GREY_BLACK5);
   color: f.color(MAIN_ACCENT);
-  padding: 1.25rem 1rem;
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-weight: 700;
+  padding: 1.25rem 1rem;
+  margin-bottom: 0.5rem;
 
   @include m.media(md) {
     font-size: 1.5rem;
     padding-left: 2rem;
     padding-right: 2rem;
+    margin-bottom: 3rem;
   }
 
   &__cryptocurrency {

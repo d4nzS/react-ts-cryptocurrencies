@@ -1,0 +1,43 @@
+@use '../../assets/sccs/mixins' as m;
+@use '../../assets/sccs/functions' as f;
+
+.main {
+  padding: 0 0.5rem;
+
+  &__table {
+    border-spacing: 1rem;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1rem;
+
+    @include m.media(md) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__tr {
+    cursor: pointer;
+    border: 1px solid #363636;
+  }
+
+  &__nav-list {
+    font-weight: 700;
+    margin: 0 auto;
+    display: flex;
+    min-width: 15rem;
+    width: 30%;
+    justify-content: space-between;
+
+    @include m.media(md) {
+      font-size: 1.125rem;
+    }
+  }
+
+  &__nav-item {
+    cursor: pointer;
+
+    &_active {
+      color: f.color(MAIN_ACCENT);
+    }
+  }
+}
