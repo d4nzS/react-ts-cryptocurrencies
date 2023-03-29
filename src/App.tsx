@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 
-import ApiUrlsConstants from './constants/urls';
+import AppUrlsConstants from './constants/urls';
 import RootLayout from './pages/RootLayout';
 import MainPage from './pages/MainPage';
 import CryptocurrencyPage from './pages/CryptocurrencyPage';
@@ -13,14 +13,14 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Navigate to={ApiUrlsConstants.CRYPTOCURRENCIES}/>,
+        element: <Navigate to={AppUrlsConstants.CRYPTOCURRENCIES}/>,
       },
       {
-        path: ApiUrlsConstants.CRYPTOCURRENCIES,
+        path: AppUrlsConstants.CRYPTOCURRENCIES,
         element: <MainPage/>
       },
       {
-        path: `${ApiUrlsConstants.CRYPTOCURRENCIES}/:cryptocurrencyId`,
+        path: `${AppUrlsConstants.CRYPTOCURRENCIES}/:cryptocurrencyId`,
         element: <CryptocurrencyPage/>
       }
     ]

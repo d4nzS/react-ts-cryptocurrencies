@@ -1,5 +1,5 @@
-class ApiUrlsConstants {
+class AppUrlsConstants {
   static readonly CRYPTOCURRENCIES = '/cryptocurrencies';
 }
 
-export default ApiUrlsConstants;
+export default AppUrlsConstants;

@@ -1,0 +1,13 @@
+@use 'assets/sccs/fonts';
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  max-width: 69.375rem;
+  margin: 0 auto;
+}
