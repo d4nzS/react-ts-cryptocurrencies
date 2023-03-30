@@ -1,0 +1,33 @@
+@use '../../assets/sccs/mixins' as m;
+@use '../../assets/sccs/functions' as f;
+
+.main {
+  padding: 0 0.5rem;
+  text-align: center;
+
+  &__button-link {
+    font-size: 1rem;
+  }
+
+  &__list {
+    margin-top: 0.25rem;
+
+    @include m.media(md) {
+      margin-top: 1.25rem;
+    }
+  }
+
+  &__list-item {
+    line-height: 1.5rem;
+    max-width: 40rem;
+    padding: 0.75rem 0;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__prop {
+    color: f.color(MAIN_ACCENT);
+  }
+}

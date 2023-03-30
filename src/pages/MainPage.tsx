@@ -14,7 +14,7 @@ const MainPage: FC = () => {
       promise={cryptocurrencies}
       withLoader
     >
-      {(loadedCryptocurrencies) => <Main cryptocurrencies={loadedCryptocurrencies}/>}
+      {loadedCryptocurrencies => <Main cryptocurrencies={loadedCryptocurrencies}/>}
     </AsyncWrapper>
   );
 };

@@ -12,6 +12,14 @@ ul {
   list-style-type: none;
 }
 
+button {
+  cursor: pointer;
+  color: f.color(MAIN_DARK);
+  font-family: 'Montserrat', sans-serif;
+  background: inherit;
+  border: none;
+}
+
 body {
   color: f.color(MAIN_DARK);
   font-family: 'Montserrat', sans-serif;
