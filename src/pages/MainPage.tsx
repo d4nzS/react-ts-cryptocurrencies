@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { defer, useLoaderData } from 'react-router-dom';
+import  { defer, useLoaderData } from 'react-router-dom';
 
 import Cryptocurrency from '../models/cryptocurrency';
 import Main from '../components/Main/Main';

@@ -4,14 +4,14 @@ import classes from './Header.module.scss';
 import Cryptocurrency from '../../models/cryptocurrency';
 
 interface HeaderProps {
-  mostExpensiveCryptocurrencies: Cryptocurrency[];
+  mostPopularCryptocurrencies: Cryptocurrency[];
 }
 
-const Header: FC<HeaderProps> = ({ mostExpensiveCryptocurrencies }) => {
+const Header: FC<HeaderProps> = ({ mostPopularCryptocurrencies }) => {
   return (
     <header className={classes.header}>
       <ul>
-        {mostExpensiveCryptocurrencies.map(({ symbol, priceUsd }) => (
+        {mostPopularCryptocurrencies.map(({ symbol, priceUsd }) => (
           <li key={symbol} className={classes.header__cryptocurrency}>
             {symbol}: <span className={classes.header__price}>{(+priceUsd).toFixed(2)}</span>
           </li>

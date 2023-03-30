@@ -7,13 +7,13 @@ import Cryptocurrency from '../models/cryptocurrency';
 import CryptocurrencyService from '../services/cryptocurrency-service';
 
 const RootLayout: FC = () => {
-  const { mostExpensiveCryptocurrencies } = useLoaderData() as { mostExpensiveCryptocurrencies: Promise<Cryptocurrency[]> };
+  const { mostPopularCryptocurrencies } = useLoaderData() as { mostPopularCryptocurrencies: Promise<Cryptocurrency[]> };
 
   return (
     <>
       <ScrollRestoration/>
-      <AsyncWrapper promise={mostExpensiveCryptocurrencies}>
-        {loadedCryptocurrencies => <Header mostExpensiveCryptocurrencies={loadedCryptocurrencies}/>}
+      <AsyncWrapper promise={mostPopularCryptocurrencies}>
+        {loadedCryptocurrencies => <Header mostPopularCryptocurrencies={loadedCryptocurrencies}/>}
       </AsyncWrapper>
       <Outlet/>
     </>
@@ -23,5 +23,5 @@ const RootLayout: FC = () => {
 export default RootLayout;
 
 export const rootLoader = () => {
-  return defer({ mostExpensiveCryptocurrencies: CryptocurrencyService.getMostExpensive() });
+  return defer({ mostPopularCryptocurrencies: CryptocurrencyService.getMostPopular() });
 }
