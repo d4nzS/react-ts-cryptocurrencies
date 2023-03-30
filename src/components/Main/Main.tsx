@@ -15,30 +15,6 @@ const Main: FC<MainProps> = ({ cryptocurrencies }) => {
 
   return (
     <main className={classes.main}>
-      <table className={classes.main__table}>
-        <thead className={classes.main__thead}>
-        <tr>
-          {CRYPTOCURRENCIES_FIELDS.map(field => (
-            <th key={field}>
-              {field}
-            </th>
-          ))}
-        </tr>
-        </thead>
-        <tbody>
-        {cryptocurrencies.slice(
-          currentPage * CRYPTOCURRENCIES_PER_PAGE,
-          currentPage * CRYPTOCURRENCIES_PER_PAGE + CRYPTOCURRENCIES_PER_PAGE
-        ).map(({ id, rank, name, symbol, priceUsd }) => (
-          <tr key={id} className={classes.main__tr}>
-            <td>{rank}</td>
-            <td>{name}</td>
-            <td>{symbol}</td>
-            <td>{(+priceUsd).toFixed(2)}</td>
-          </tr>
-        ))}
-        </tbody>
-      </table>
       <nav>
         <ul className={classes['main__nav-list']}>
           {[...new Array(pages)].map((_, i) => (
@@ -54,6 +30,33 @@ const Main: FC<MainProps> = ({ cryptocurrencies }) => {
           ))}
         </ul>
       </nav>
+      <table className={classes.main__table}>
+        <thead className={classes.main__thead}>
+        <tr className={classes.main__tr}>
+          {CRYPTOCURRENCIES_FIELDS.map(field => (
+            <th
+              key={field }
+              className={classes.main__th}
+            >
+              {field}
+            </th>
+          ))}
+        </tr>
+        </thead>
+        <tbody>
+        {cryptocurrencies.slice(
+          currentPage * CRYPTOCURRENCIES_PER_PAGE,
+          currentPage * CRYPTOCURRENCIES_PER_PAGE + CRYPTOCURRENCIES_PER_PAGE
+        ).map(({ id, rank, name, symbol, priceUsd }) => (
+          <tr key={id} className={classes.main__tr}>
+            <td className={classes.main__td}>{rank}</td>
+            <td className={classes.main__td}>{name}</td>
+            <td className={classes.main__td}>{symbol}</td>
+            <td className={classes.main__td}>{(+priceUsd).toFixed(2)}</td>
+          </tr>
+        ))}
+        </tbody>
+      </table>
     </main>
   );
 };

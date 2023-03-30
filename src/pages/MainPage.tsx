@@ -10,7 +10,10 @@ const MainPage: FC = () => {
   const { cryptocurrencies } = useLoaderData() as { cryptocurrencies: Promise<Cryptocurrency[]> };
 
   return (
-    <AsyncWrapper promise={cryptocurrencies}>
+    <AsyncWrapper
+      promise={cryptocurrencies}
+      withLoader
+    >
       {(loadedCryptocurrencies) => <Main cryptocurrencies={loadedCryptocurrencies}/>}
     </AsyncWrapper>
   );

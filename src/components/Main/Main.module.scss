@@ -4,25 +4,13 @@
 .main {
   padding: 0 0.5rem;
 
-  &__table {
-    border-spacing: 1rem;
-    text-align: center;
-    width: 100%;
-    margin-bottom: 1rem;
-
-    @include m.media(md) {
-      margin-bottom: 2rem;
-    }
-  }
-
-  &__tr {
-    cursor: pointer;
-    border: 1px solid #363636;
+  @include m.media(md) {
+    padding: 0 1rem;
   }
 
   &__nav-list {
     font-weight: 700;
-    margin: 0 auto;
+    margin: 0 auto 1rem;
     display: flex;
     min-width: 15rem;
     width: 30%;
@@ -30,6 +18,7 @@
 
     @include m.media(md) {
       font-size: 1.125rem;
+      margin-bottom: 2rem;
     }
   }
 
@@ -39,5 +28,31 @@
     &_active {
       color: f.color(MAIN_ACCENT);
     }
+  }
+
+  &__table {
+    border-collapse: collapse;
+    border: 1px solid f.color(MAIN_ACCENT);
+    font-size: 0.9em;
+    width: 100%;
+  }
+
+  &__thead {
+    background: f.color(MAIN_ACCENT);
+    color: white;
+    text-align: left;
+  }
+
+  &__tr {
+    border-bottom: 1px solid f.color(MAIN_ACCENT);
+  }
+
+  &__th {
+    padding: 0.5rem 0.75rem;
+  }
+
+  &__td {
+    cursor: pointer;
+    padding: 0.75rem 1rem;
   }
 }
